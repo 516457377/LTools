@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>简易平均道具计算器</title>
+</head>
+<body>
+    <h1>输入道具数：</h1>
+    <form id="additionForm">
+        <label for="num1">道具数量:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br><br>
+        <input type="submit" value="计算">
+    </form>
+
+    <h2>计算结果:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+            var num1 = parseInt(document.getElementById("num1").value);
+            // 计算并显示结果
+            var daojv = num1*0.25;
+            var zm = num1*0.5;
+            
+            var sh = num1*2.725;
+            var wh = num1*1.445;
+            var bj = num1*0.205;
+            var zz = num1*0.254;
+            var jz = num1*107.304;
+            var jt = num1*136.68;
+            
+            
+            document.getElementById("result").innerText = "道具: " + daojv+"\n招募："+zm+"\n随机红："+sh+"\n万能红："+wh+"\n铂金箱子："+bj+"\n珍珠："+zz+"\n金钻："+jz+"\n精铁："+jt;
+        });
+    </script>
+</body>
+</html>
