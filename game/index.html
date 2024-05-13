@@ -1,44 +1,84 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-
-	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
     <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
     <META    HTTP-EQUIV="Expires" CONTENT="0">
 
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <title>工具使用目录</title>
-    <!--<script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>-->
+    <title>简易平均道具计算器</title>
+    <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 </head>
 <body style="text-align:center;">
+    <h1 style="width:100%;height:20px;font-size:20px;text-align:center;">简易平均道具计算器</h1>
+    <h5>打开道具获取资源平均值计算，多则赚少则亏，按照概率换算的平均值，仅作参考。</h5>
+    <!--<h4>输入道具数：</h4>-->
+    <form id="additionForm">
+        <label for="num1">打开道具数量:</label>
+        <input style="width:50%;height:40px;font-size:30px;" type="number" id="num1" name="num1" value="1002"required>
+        <br><br>
+        <input style="width:50%;height:40px;font-size:30px;" type="submit" value="计算">
+    </form>
 
-<h1>导航页</h1>
-<a href="./open.html" style="font-size:30px;">消耗活动道具平均值计算</a>
-<br><br>
-<a href="./baoxiang.html" style="font-size:30px;">宝箱积分计算</a>
-<br><br>
-<a href="./gongji.html" style="font-size:30px;">面板攻击计算</a>      
-<br><br>
-<a href="./shidian.html" style="font-size:30px;">十殿基础属性</a>
-<br><br>
-<a href="./shidianjisuan.html" style="font-size:30px;">十殿伤害计算</a>
-<br><br>
-<a href="./duanwu.html" style="font-size:30px;">2306端午消耗情况</a>
-<br><br>
-<a href="./23zhongqiu.html" style="font-size:30px;">23中秋消耗情况</a>
-<br><br>
-<a href="./24yuandan.html" style="font-size:30px;">24元旦消耗情况</a>
-<!--
-<a href="https://516457377.github.io/demo/">点击跳转鼠标特效</a>
-<br>
-<a href="./demo/demo.html">点击跳转学习demo页</a>
-<br>
-<a href="./demo/token.html">跳转网络接口</a>
+    <h2 >计算结果:</h2>
+    <p id="result"></p>
 
-<p>要先去学kotlin了呢。搁置</p>
-<a href="https://www.runoob.com/html/html-links.html">上次看到的地址</a>
--->
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+            var num1 = parseInt(document.getElementById("num1").value);
+            // 计算并显示结果
+            var daojv = num1*0.25;
+            var zm = num1*0.5;
+            
+            var sh = num1*2.725;
+            var wh = num1*1.445;
+            var bj = num1*0.205;
+            var zz = num1*0.254;
+            var jz = num1*107.304;
+            var jt = num1*136.68;
+            
+            
+            document.getElementById("result").innerText = "道具: " + daojv+"\n招募："+zm+"\n随机红："+sh+"\n万能红："+wh+"\n铂金箱子："+bj+"\n珍珠："+zz+"\n金钻："+jz+"\n精铁："+jt;
+        });
+    </script>
+    
+    <!--<h4>输入号角数量：</h4>
+    <form id="additionForm">
+        <label for="num1">号角数量:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br><br>
+        <input type="submit" value="计算">
+    </form>
+
+    <h2>计算结果:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+            var num1 = parseInt(document.getElementById("num1").value);
+            // 计算并显示结果
+            var daojv = num1*0.25;
+            var zm = num1*0.5;
+            
+            var sh = num1*2.725;
+            var wh = num1*1.445;
+            var bj = num1*0.205;
+            var zz = num1*0.254;
+            var jz = num1*107.304;
+            var jt = num1*136.68;
+            
+            
+            document.getElementById("result").innerText = "道具: " + daojv+"\n招募："+zm+"\n随机红："+sh+"\n万能红："+wh+"\n铂金箱子："+bj+"\n珍珠："+zz+"\n金钻："+jz+"\n精铁："+jt;
+        });
+    </script>-->
 </body>
 </html>
