@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>十殿基础属性</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal img {
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10% auto;
+        }
+        
+        .content {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>十殿基础属性</h1>
+
+    <label for="selectOption" style="font-size:20px;">选择查看关卡:</label>
+    <select id="selectOption" onchange="showContent()" style="font-size:20px;">
+        
+        <option value="content1">第一关 秦广王</option>
+        <option value="content2">第二关 楚江王</option>
+        <option value="content3">第三关 宋帝王</option>
+        <option value="content4">第四关 五官王</option>
+        <option value="content5">第五关 阎罗王</option>
+        <option value="content6">第六关 卞城王</option>
+        <option value="content7">第七关 泰山王</option>
+        <option value="content8">第八关 都市王</option>
+    </select>
+    <br><br>
+    <div id="contentContainer" class="content">
+        <div id="content1" style="display: block;">
+            <h1>秦广王</h1>
+            攻击：57.25亿 <br> 血量：2253亿 <br> 防御：2.532亿 <br> 速度：13000  <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%
+            <p ><strong>随从</strong></p>
+            攻击：28.62亿<br>血量：751.2亿<br>防御：25.32亿<br>速度：1<br>
+            破甲抵抗:70%<br>暴击抵抗:50%<br>精准:70%<br>破甲:70%<br>
+            <p ><strong>特殊说明</strong></p>
+             BOSS和小怪都会优先攻击血量最低的武将，boss击杀会连续攻击，生命小于或等于40%时，增加50%伤害
+            <p ><strong>技能说明</strong></p>
+            技能伤害:300%,对敌方全体造成伤害和沉默1回合。
+        </div>
+        
+        <div id="content2" style="display: none;">
+            <h1>楚江王</h1>
+            攻击：62.98亿 <br> 血量：2479亿 <br> 防御：2.532亿 <br> 速度：13500  <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%<br>免疫一切异常状态，对冰冻目标增伤40%
+            <p ><strong>随从</strong></p>
+            攻击：91.61亿<br>血量：826.4亿<br>防御：25.32亿<br>速度：1<br>
+            破甲抵抗:70%<br>暴击抵抗:50%<br>精准:70%<br>破甲:70%<br>
+            <p ><strong>特殊说明</strong></p>
+            对冰冻增伤增加:40%，减少攻击者攻击:-10% 5回合，小怪优先攻击被冰冻目标造成额外伤害 并解除冰冻。
+            <p ><strong>技能说明</strong></p>
+            技能伤害:190%，后排敌人，冰冻时，恢复怒气:30%
+        </div>
+        
+        <div id="content3" style="display: none;">
+            <h1>宋帝王</h1>
+            攻击：69.28亿 <br> 血量：2727亿 <br> 防御：2.532亿 <br> 速度：13600 <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%
+            <p ><strong>随从</strong></p>
+            无<br>
+            <p ><strong>技能说明</strong></p>
+            技能伤害:100%，全体，部分伤害转换护盾
+            <p ><strong>特殊说明</strong></p>
+            生命越低伤害提升越高，提升已损失生命百分比*4倍伤害（0%——75%*4=最高3倍），血量高于10%，攻击-5%生命。生命低于50%时增加70%减伤。
+        </div>
+        <div id="content4" style="display: none;">
+            <h1>五官王</h1>
+            攻击：76.21亿 <br> 血量：2999亿 <br> 防御：2.532亿 <br> 速度：13600 <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%<br>流血免疫
+            <p ><strong>随从</strong></p>
+            无<br>
+            <p ><strong>技能说明</strong></p>
+            技能伤害:300%，随机三人，流血2回合，流血伤害50%，对流血增伤50%,攻击增加20%三回合
+            <p ><strong>特殊说明</strong></p>
+            生命低于80%增加速度10000（可被贾诩被动-50%），生命低于40%，攻击增加100%，生命低于20%，减伤增加50%
+            <p ><strong>举例</strong></p>
+            血量低于40%：大招76*2*2.2*满破抵满减伤*0.3*0.3=30亿。流血6亿，普攻引爆6亿+增伤50%+20%=30亿，共计66亿。
+        </div>
+        
+        <div id="content5" style="display: none;">
+            <h1>阎罗王</h1>
+            攻击：83.83亿 <br> 血量：3299亿 <br> 防御：2.532亿 <br> 速度：13600 <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%<br>
+            <p ><strong>随从</strong></p>
+            攻击：80.16亿 <br> 血量：3005亿 <br> 防御：2.532亿 <br> 速度：13600 <br>
+            免控增加:80%<br>破甲抵抗增加:70%<br>暴击抵抗增加:50%<br>精准增加:70%<br>
+            <p ><strong>技能说明</strong></p>
+            技能伤害:150%，全体，斩杀低于20%血量，
+            <p ><strong>特殊说明</strong></p>
+            护盾无法生效，BOSS普攻攻击最高敌人降低50%治疗效果（攻击2次吸0），BOSS受到伤害两只小怪有50%几率立即攻击1次，当有两个不同标记触发爆炸扣除50%当前生命值真伤（最大10倍伤害，800亿）
+        </div>
+        
+        <div id="content6" style="display: none;">
+            <h1>卞城王（1甄姬1吕布嘎嘎乱杀）</h1>
+            攻击：115.6亿 <br> 血量：300 <br> 防御：2.532亿 <br> 速度：2 <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%<br>
+            <p ><strong>随从</strong></p>
+            攻击：51.53亿 <br> 血量：26.29亿 <br> 防御：2.532亿 <br> 速度：0 <br>
+            免控增加:80%<br>破甲抵抗增加:70%<br>暴击抵抗增加:50%<br>精准增加:70%<br>
+            <p ><strong>技能说明</strong></p>
+            技能伤害:10%生命真伤，全体，移除护盾
+            <p ><strong>特殊说明</strong></p>
+            每次只会受到1点伤害，小怪回合结束爆炸，随机挂（降低30%治疗3回合，流血3回合，灼烧3回合，中毒3回合）<br>
+            流血65%攻击伤害<br>灼烧50%攻击伤害<br>中毒50%攻击伤害
+        </div>
+        
+        <div id="content7" style="display: none;">
+            <h1>泰山王</h1>
+            攻击：229亿 <br> 血量：7512亿 <br> 防御：2.532亿 <br> 速度：13600 <br><br>
+            破甲抵抗:70%  <br> 暴击抵抗:50% <br>    精准:70%   <br> 破甲:70% <br> 免控：80%<br>暴击：100%<br>爆伤：200%（3.5倍伤害）
+            <p ><strong>随从</strong></p>
+            无
+            <p ><strong>技能说明</strong></p>
+            技能伤害:150%，全体，附加2层火海，生命低于50%附加3层
+            <br>70减伤70破底伤害计算，229*1.5*3.5（暴击）*0.3*0.3=108.2亿（贼疼），建议带大饼减爆伤。
+            <p ><strong>特殊说明</strong></p>
+            火海最多6层，每回合结束-1层，无法清除，随从攻击前受到200%自身攻击力伤害，会暴击
+            <br>假设吕布5亿攻击，70减伤，70破底，5*2（心魔）*1.8（最佳献祭）*2（基础）*3.5（暴击）*0.3*0.3=11.34亿。
+        </div>
+        
+        <div id="content8" style="display: none;">
+            <h1>都市王</h1>
+            攻击：137.4亿 <br> 血量：7888亿 <br> 防御：2.532亿 <br> 速度：15000 <br><br>
+            破甲抵抗:100%  <br> 破甲:100% <br> 暴击抵抗:60% <br>    精准:50%  <br> 免控：85%<br>冰冻免疫：100% 沉默免疫：60% 眩晕免疫：60% <br>
+            <p ><strong>随从</strong></p>
+            攻击：22.9亿<br>血量：76亿<br>防御：25.32亿<br>速度：1<br>
+            <p ><strong>技能说明</strong></p>
+            boss只会放技能，沉默=控制(太史慈50%沉默-85%=7.5%*0.4=3%)
+            一阶段：技能伤害120%，60%减少50%治疗效果，持续3回合。<br>
+            80%血量开启二阶段<br>
+            技能伤害：180%，70%减少50%治疗，增伤6%<br>
+            50%血量开启三阶段<br>
+            技能伤害：240%，70%减少50%治疗，60%减少51怒气，增伤10%<br>
+
+            <br>
+            <p ><strong>特殊说明</strong></p>
+            每死亡一个敌方或者友方随从，boss恢复怒气50.
+        </div>
+    </div>
+    
+    
+    
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <img src="./20230622/道具获得挡位.jpg" alt="图片描述">
+    </div>
+    
+    <a href="./index.html">返回导航页面</a>
+    <script>
+        function showModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = modal.getElementsByTagName("img")[0];
+            modalImg.src = img.src;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function showContent() {
+            var selectElement = document.getElementById("selectOption");
+            var selectedValue = selectElement.value;
+            var contentContainer = document.getElementById("contentContainer");
+
+            // 隐藏所有内容
+            var allContents = contentContainer.getElementsByTagName("div");
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = "none";
+            }
+
+            // 根据选择的选项显示相应内容
+            if (selectedValue !== "") {
+                var selectedContent = document.getElementById(selectedValue);
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

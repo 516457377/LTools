@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>Boss伤害计算</title>
+    
+</head>
+<body style="text-align:center;">
+    <h1 style="width:100%;height:20px;font-size:30px;text-align:center;">Boss伤害计算</h1>
+	<br><br>
+    <h5 hidden="true"></h5>
+    <!--<h4>输入道具数：</h4>-->
+    <form id="additionForm">
+        <label style="font-size:25px;" for="num1">boss攻击（亿）:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num1" name="num1"  value="76">
+		<br>
+		<label style="font-size:25px;" for="num2">减伤:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001" id="num2" name="num2"  value="0.7">
+		<br>
+		<label style="font-size:25px;" for="num3">破抵:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num3" name="num3"  value="0.7">
+		<br>
+		<label style="font-size:25px;" for="num4">减攻:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num4" name="num4"  value="0.2">
+		<br>
+		<label style="font-size:25px;" for="num5">增攻:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num5" name="num5"  value="0.0">
+        <br>
+        <label style="font-size:25px;" for="num7">增伤:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num7" name="num7"  value="0.0">
+        <br>
+        <label style="font-size:25px;" for="num8">暴伤:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num8" name="num8"  value="3.18">
+        <br>
+		<label style="font-size:25px;" for="num6">技能伤害:</label>
+        <input style="font-size:25px;" type="number" step="0.0000001"  id="num6" name="num6"  value="1.5">
+        <br><br>
+        <input style="font-size:30px;" type="submit" value="计算">
+    </form>
+
+    <h2 >计算结果:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+			
+            var gongji = parseFloat(document.getElementById("num1").value);
+			//gongji = isNaN(gongji)?0:gongji;
+            
+            var jianshang = parseFloat(document.getElementById("num2").value);
+			//jianshang = isNaN(jianshang)?0:jianshang;
+            
+			var podi = parseFloat(document.getElementById("num3").value);
+			//podi = isNaN(podi)?0:podi;
+            
+            var jian = parseFloat(document.getElementById("num4").value);
+			//jian = isNaN(jian)?0:jian;
+            
+            var zeng = parseFloat(document.getElementById("num5").value);
+			//zeng = isNaN(zeng)?0:zeng;
+			
+            var zengs = parseFloat(document.getElementById("num7").value);
+            
+            var baos = parseFloat(document.getElementById("num8").value);
+            
+            var jineng = parseFloat(document.getElementById("num6").value);
+			//jineng = isNaN(jineng)?0:jineng;
+            
+            var pugong = gongji*(1+(zeng-jian))*(1-podi)*(1-jianshang)*(1+zengs);
+            var ji = pugong*jineng;
+			
+
+            
+            
+            document.getElementById("result").innerText = "攻击: " + (pugong).toFixed(2)+"——惊涛: " + (pugong*0.7).toFixed(2)+"\n技能："+(ji).toFixed(2)+"——惊涛："+(ji*0.7).toFixed(2)+"\n\n暴攻:"+(pugong*baos).toFixed(2)+"——惊涛:"+(pugong*baos*0.7).toFixed(2)+"\n暴技:"+(ji*baos).toFixed(2)+"——惊涛:"+(ji*baos*0.7).toFixed(2);
+        });
+    </script>
+	
+	<a href="./index.html">返回导航页面</a>
+    
+    <!--<h4>输入号角数量：</h4>
+    <form id="additionForm">
+        <label for="num1">号角数量:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br><br>
+        <input type="submit" value="计算">
+    </form>
+
+    <h2>计算结果:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+            var num1 = parseInt(document.getElementById("num1").value);
+            // 计算并显示结果
+            var daojv = num1*0.25;
+            var zm = num1*0.5;
+            
+            var sh = num1*2.725;
+            var wh = num1*1.445;
+            var bj = num1*0.205;
+            var zz = num1*0.254;
+            var jz = num1*107.304;
+            var jt = num1*136.68;
+            
+            
+            document.getElementById("result").innerText = "道具: " + daojv+"\n招募："+zm+"\n随机红："+sh+"\n万能红："+wh+"\n铂金箱子："+bj+"\n珍珠："+zz+"\n金钻："+jz+"\n精铁："+jt;
+        });
+    </script>-->
+</body>
+</html>

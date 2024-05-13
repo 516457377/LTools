@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>面板攻击力计算</title>
+    
+</head>
+<body style="text-align:center;">
+    <h1 style="width:100%;height:20px;font-size:30px;text-align:center;">简易面板攻击力计算器</h1>
+    <h5 >默认满级6000为标准<仅作参考存在一定误差></h5>
+	<br><br>
+    
+
+    <form id="additionForm">
+        <label style="font-size:25px;" for="num1">武器攻击(加上洗练攻击):</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num1" name="num1" value="50100" placeholder="满级无淬炼：45492" >
+		<br>
+		<label style="font-size:25px;" for="num2">水晶固定攻击:</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num2" name="num2" value="6600" placeholder="金9：11200\6600\0">
+		<br>
+		<label style="font-size:25px;" for="num3">攻击淬炼(百分比):</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num3" name="num3" value="14.3" placeholder="0-40">
+		<br>
+		<label style="font-size:25px;" for="num4">鱼百分比攻击:</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num4" name="num4" value="25" placeholder="0-25">
+        <br>
+        <label style="font-size:25px;" for="num5">水晶百分比攻击:</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num5" name="num5" value="0" placeholder="金9：4\18\31">
+		<br>
+        <label style="font-size:25px;" for="num6">皮肤百分比(加上各种徽章):</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num6" name="num6" value="6" placeholder="皮肤：2\4\6+徽章">
+		<br>
+        <label style="font-size:25px;" for="num7">玩具攻击力:</label>
+        <input style="font-size:25px;width:40%;" type="float" id="num7" name="num7" value="52211250" placeholder="满级：52211250">
+		<br>
+        <br><br>
+        <input style="font-size:30px;" type="submit" value="计算">
+    </form>
+
+    <h2 >计算结果:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+			
+            var 武器攻击 = parseInt(document.getElementById("num1").value);
+			武器攻击 = isNaN(武器攻击)?0:武器攻击;
+            
+            var 水晶固定攻击 = parseInt(document.getElementById("num2").value);
+			水晶固定攻击 = isNaN(水晶固定攻击)?0:水晶固定攻击;
+            
+			var 攻击淬炼 = parseInt(document.getElementById("num3").value);
+			攻击淬炼 = isNaN(攻击淬炼)?1:(攻击淬炼+100)/100;
+            
+            var 鱼百分比攻击 = parseInt(document.getElementById("num4").value);
+			鱼百分比攻击 = isNaN(鱼百分比攻击)?1:(鱼百分比攻击+100)/100;
+            
+            var 水晶百分比攻击 = parseInt(document.getElementById("num5").value);
+			水晶百分比攻击 = isNaN(水晶百分比攻击)?1:(水晶百分比攻击+100)/100;
+            
+            var 皮肤百分比 = parseInt(document.getElementById("num6").value);
+			皮肤百分比 = isNaN(皮肤百分比)?1:(皮肤百分比+100)/100;
+            
+            var 玩具攻击力 = parseInt(document.getElementById("num7").value);
+			玩具攻击力 = isNaN(玩具攻击力)?0:玩具攻击力;
+			
+            var gongji = (71000+武器攻击+水晶固定攻击)*2266*攻击淬炼*水晶百分比攻击*鱼百分比攻击*皮肤百分比+玩具攻击力
+            
+            var yi = 0;
+            var qian = 0;
+            if(gongji>100000000){
+                yi = parseInt(gongji/100000000)
+                gongji = gongji%100000000;
+            }
+            
+            if(gongji>10000000){
+                qian = parseInt(gongji/10000000)
+                gongji = gongji%10000000;
+            }
+            
+            document.getElementById("result").innerText = "面板攻击为: " + yi+"亿"+qian+"千万"+parseInt(gongji);
+        });
+    </script>
+	
+	<a href="./index.html">返回导航页面</a>
+    
+    <!--<h4>输入号角数量：</h4>
+    <form id="additionForm">
+        <label for="num1">号角数量:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br><br>
+        <input type="submit" value="计算">
+    </form>
+
+    <h2>计算结果:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("additionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交的默认行为
+
+            // 获取输入的数字
+            var num1 = parseInt(document.getElementById("num1").value);
+            // 计算并显示结果
+            var daojv = num1*0.25;
+            var zm = num1*0.5;
+            
+            var sh = num1*2.725;
+            var wh = num1*1.445;
+            var bj = num1*0.205;
+            var zz = num1*0.254;
+            var jz = num1*107.304;
+            var jt = num1*136.68;
+            
+            
+            document.getElementById("result").innerText = "道具: " + daojv+"\n招募："+zm+"\n随机红："+sh+"\n万能红："+wh+"\n铂金箱子："+bj+"\n珍珠："+zz+"\n金钻："+jz+"\n精铁："+jt;
+        });
+    </script>-->
+</body>
+</html>

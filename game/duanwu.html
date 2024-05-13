@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>端午消耗统级</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal img {
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10% auto;
+        }
+        
+        .content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>下拉菜单示例</h1>
+
+    <label for="selectOption" style="font-size:20px;">选择一个选项:</label>
+    <select id="selectOption" style="font-size:20px;" onchange="showContent()">
+        
+        <option value="content1">消耗各档位资源</option>
+        <option value="content2">拿金鱼消耗统级</option>
+        <option value="content3">开箱展示</option>
+    </select>
+    <br><br>
+    <div id="contentContainer" class="content">
+        <div id="content1" style="display: block;">
+            
+            <img width="85%" style="max-width: 80%" src="./20230622/道具获得挡位.jpg" alt="点击看大图" onclick="showModal(this)">
+        </div>
+        
+         
+        <div id="content2" style="display: none;">
+            <p>
+            一共道具978<br>
+            1450+42w<br><br>
+
+
+            1450鱼竿：月尾*5，焰神*1，红蝶*3，赤羽*6，千年笛*6 共计21，<br>
+            出货率：平均69杆出1(1.44%)<br>
+            理论出货率：0.11+0.11+0.11+0.09+0.10 +(2%*5/10)=1.52%<br><br>
+
+            前后资源对比<br>
+            金钻：40*300+330700=342700<br>
+            宝箱：63750<br>
+            鱼竿：1011<br>
+            招募：10321<br>
+            图鉴：2850<br>
+            ===节后====<br>
+            金钻：225*300=67500+137300=204800<br>
+            宝箱：42774<br>
+            鱼竿：375<br>
+            招募：7966<br>
+            图鉴：3062<br>
+
+            ==消耗==<br>
+            金钻：137900<br>
+            宝箱：20976<br>
+            招募：2355<br>
+            鱼竿：636<br>
+            
+            </p>
+        
+        </div>
+        
+        
+        <div id="content3" style="display: none;">
+            <p>活动进度展示</p><br>
+            <img width="200" src="./20230622/活动进度.jpg" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+            <p>钓鱼前后对比</p><br>
+            <img width="200" src="./20230622/钓鱼前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20230622/钓鱼后.jpg" alt="点击看大图" onclick="showModal(this)"><br><br>
+            
+            <p>开箱展示</p><br>
+            <video width="200" controls>
+                <source src="./20230622/道具开箱.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video>
+            
+            <video width="200" controls>
+                <source src="./20230622/道具开箱2.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video>
+        </div>
+    </div>
+   
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <img  alt="点击缩小">
+    </div>
+    <a href="./index.html">返回导航页面</a>
+    <script>
+        function showModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = modal.getElementsByTagName("img")[0];
+            modalImg.src = img.src;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function showContent() {
+            var selectElement = document.getElementById("selectOption");
+            var selectedValue = selectElement.value;
+            var contentContainer = document.getElementById("contentContainer");
+
+            // 隐藏所有内容
+            var allContents = contentContainer.getElementsByTagName("div");
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = "none";
+            }
+
+            // 根据选择的选项显示相应内容
+            if (selectedValue !== "") {
+                var selectedContent = document.getElementById(selectedValue);
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
