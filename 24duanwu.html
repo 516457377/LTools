@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>24端午消耗统计</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal img {
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10% auto;
+        }
+        
+        .content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>24端午消耗统计</h1>
+
+    <label for="selectOption" style="font-size:20px;">选择一个选项:</label>
+    <select id="selectOption" style="font-size:20px;" onchange="showContent()">
+        <option value="content1">大号消耗统计</option>
+
+    </select>
+    <br><br>
+    <div id="contentContainer" class="content">
+        
+         
+        <div id="content1" style="display: block;">
+        <h2>统计</h2><br>
+            <p>
+            道具：1600+46 966+36+12=1014(1010实际)<br>
+            开箱数据：     |  (1010实际)<br>
+            道具: 252.5     |  250<br>
+            招募：505      |  590+20=610<br>
+            随机红：2752 | 2290+170=2460 <br>
+            万能红：1459 |  1445+40=1485<br>
+            铂金箱子：207|  187+5=192<br>
+            珍珠：256 |  263+13+7=283<br>
+            金钻：108377  | 11.31w+1500+2000=11.66w <br>
+            精铁：138046  | 14.78w+5000=15.28w<br><br>
+
+            钓鱼：赤羽*5 焰神*6 红蝶*7 月尾*8 千年迪*4<br>
+            共计30条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻：33.42w<br>
+            宝箱：68174<br>
+            招募：7423	<br>
+            图鉴：3406<br>
+            鱼竿：908<br>
+            =====<br>
+            金钻：61736+（61600宝箱）<br>
+            宝箱：45962<br>
+            招募：4239<br>
+            图鉴：3406<br>
+            鱼竿：193<br>
+            ====消耗====<br>
+            金钻：21.12w<br>
+            宝箱：22212<br>
+            招募：3184<br>
+            鱼竿：715<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20240613/钓鱼前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20240613/钓鱼后1.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20240613/钓鱼后2.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            <h2>活动展示</h2><br>
+            <img width="200" src="./20240613/活动前资源.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20240613/活动后资源.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <video width="200" controls>
+                <source src="./20240613/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br>
+           
+            <img width="200" src="./20240613/活动进度.jpg" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+    </div>
+    
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <img  alt="点击缩小">
+    </div>
+    <a href="./index.html">返回导航页面</a>
+    <script>
+        function showModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = modal.getElementsByTagName("img")[0];
+            modalImg.src = img.src;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function showContent() {
+            var selectElement = document.getElementById("selectOption");
+            var selectedValue = selectElement.value;
+            var contentContainer = document.getElementById("contentContainer");
+
+            // 隐藏所有内容
+            var allContents = contentContainer.getElementsByTagName("div");
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = "none";
+            }
+
+            // 根据选择的选项显示相应内容
+            if (selectedValue !== "") {
+                var selectedContent = document.getElementById(selectedValue);
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
