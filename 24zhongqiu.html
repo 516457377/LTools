@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>24中秋消耗统计</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal img {
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10% auto;
+        }
+        
+        .content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>24中秋消耗统计</h1>
+
+    <label for="selectOption" style="font-size:20px;">选择一个选项:</label>
+    <select id="selectOption" style="font-size:20px;" onchange="showContent()">
+        <option value="content1">大号消耗统计</option>
+        <option value="content2">副本展示</option>
+    </select>
+    <br><br>
+    <div id="contentContainer" class="content">
+        
+         
+        <div id="content1" style="display: block;">
+        <h2>统计</h2><br>
+            <p>
+            道具：1600+50（脸黑） <br>
+            开箱数据：      500+400+113+9=1022(一共1026，余4)<br>
+            道具: 255       | 120+98+29+3=250<br>
+            招募：511      | 210+160+50+5=425<br>
+            随机红：2784 | 1420+1175+225+40=2860 <br>
+            万能红：1476 | 660+620+145=1425<br>
+            铂金箱子：209| 87+112+22=221<br>
+            珍珠：259      | 157+82+30=269<br>
+            金钻：109664 | 52576+47784+18288+1700=120348 <br>
+            精铁：139686 |82352+60504+14920+888=158664<br><br>
+
+            钓鱼：赤羽*4 焰神*7 红蝶*4 月尾*4 千年迪*3<br>
+            理论出货率：1.52%<br>
+            共计22条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻：13.55+13w（金钻福袋150+100喇叭）<br>
+            宝箱：57278<br>
+            招募：6370	<br>
+            图鉴：3500<br>
+            鱼竿：809<br>
+            =====<br>
+            金钻：18500+（35700宝箱）=54200<br>
+            宝箱：36539<br>
+            招募：3671<br>
+            图鉴：3601<br>
+            鱼竿：250<br>
+            ====消耗====<br>
+            金钻：21w<br>
+            宝箱：2w1<br>
+            招募：2699<br>
+            鱼竿：559<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20240913/鱼活动前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20240913/鱼活动后.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            <h2>活动展示</h2><br>
+            <img width="200" src="./20240913/活动前资源.png" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20240913/活动后资源.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <video width="200" controls>
+                <source src="./20240913/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br>
+           
+            <img width="200" src="./20240913/活动进度.jpg" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content2" style="display: none;">
+        <h2>副本展示</h2><br>
+            
+            
+            <br>
+            <video width="200" controls>
+                <source src="./20240913/dengshen6.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br>
+            
+            <video width="200" controls>
+                <source src="./20240913/shidian.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br>
+           
+        
+        </div>
+        
+    </div>
+    
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <img  alt="点击缩小">
+    </div>
+    <a href="./index.html">返回导航页面</a>
+    <script>
+        function showModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = modal.getElementsByTagName("img")[0];
+            modalImg.src = img.src;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function showContent() {
+            var selectElement = document.getElementById("selectOption");
+            var selectedValue = selectElement.value;
+            var contentContainer = document.getElementById("contentContainer");
+
+            // 隐藏所有内容
+            var allContents = contentContainer.getElementsByTagName("div");
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = "none";
+            }
+
+            // 根据选择的选项显示相应内容
+            if (selectedValue !== "") {
+                var selectedContent = document.getElementById(selectedValue);
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
