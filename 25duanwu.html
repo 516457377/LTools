@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>25端午消耗情况</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal img {
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10% auto;
+        }
+        
+        .content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>25端午消耗情况</h1>
+
+    <label for="selectOption" style="font-size:20px;">选择一个选项:</label>
+    <select id="selectOption" style="font-size:20px;" onchange="showContent()">
+        <option value="content1">大号消耗统计</option>
+        <option value="content2">弃坑消耗统计</option>
+        <option value="content3">竖咖消耗统计</option>
+        <option value="content4">名方消耗统计</option>
+    </select>
+    <br><br>
+    <div id="contentContainer" class="content">
+        
+         
+        <div id="content1" style="display: block;">
+        <h2>统计 大号</h2><br>
+            <p>
+            进度： 97<br>
+            道具： 1600+42 <br>
+            开箱数据：     966<br>
+            道具:     243<br>
+            招募：    400<br>
+            随机红：  2770 <br>
+            万能红：  1495 <br>
+            铂金箱子： 138<br>
+            珍珠：     291 <br>
+            金钻： 10.33w <br>
+            精铁： 15.85w <br><br>
+            
+            之前：赤羽*28 焰神*32 红蝶*28 月尾*36 千年迪*31<br>
+            之后：赤羽*33 焰神*36 红蝶*39 月尾*40 千年迪*35<br>
+            钓鱼：赤羽*5 焰神*4 红蝶*11 月尾*4 千年迪*4<br>
+            理论出货率：1.52%<br>
+            共计28条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 50.45w<br>
+            招募： 7246<br>
+            鱼竿： 1107<br>
+            宝箱： 84248<br>
+            图鉴： 4069<br>
+            
+            =====<br>
+            金钻：27.52w+（17+186钻石）71050=34.62w<br>
+            招募： 4115<br>
+            鱼竿： 370<br>
+            宝箱： 60439<br>
+            图鉴： 4069<br>
+            
+            ====消耗====<br>
+            金钻： 15.83w<br>
+            招募： 3131<br>
+            宝箱： 23809<br>
+            鱼竿： 737<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250530/大号前.png" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/大号后.png" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+
+            
+            <h2>鱼展示</h2><br>
+            <img width="200" src="./20250530/大号鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/大号后鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br><br>
+            
+            <video width="200" controls>
+                <source src="./20250530/[SHANA]大号966开箱.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br>
+           
+            <img width="200" src="./20250530/进度大号名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content2" style="display: none;">
+        <h2>统计 弃坑</h2><br>
+            <p>
+            进度：99 <br>
+            道具：1600+50 <br>
+            开箱数据：    954<br>
+            道具:      233<br>
+            招募：     460<br>
+            随机红：    2565<br>
+            万能红：    1435<br>
+            铂金箱子： 237<br>
+            珍珠：     217<br>
+            金钻：     12.98w<br>
+            精铁： 12.09w<br><br>
+            
+            之前：赤羽*20 焰神*15 红蝶*6 月尾*18 千年迪*12<br>
+            之后：赤羽*22 焰神*16 红蝶*11 月尾*23 千年迪*15<br>
+            钓鱼：赤羽*2 焰神*4 红蝶*5 月尾*5 千年迪*3<br>
+            理论出货率：1.52%<br>
+            共计19条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 38.81w<br>
+            招募： 8008<br>
+            鱼竿： 1145<br>
+            宝箱： 109759<br>
+            图鉴： 3269<br>
+            =====<br>
+            金钻： 99296+（24+179钻石）71050=17.03w<br>
+            招募： 4697<br>
+            鱼竿： 565<br>
+            宝箱： 89431<br>
+            图鉴： 3269<br>
+            ====消耗====<br>
+            金钻： 21.78w<br>
+            招募： 3311<br>
+            鱼竿： 580<br>
+            宝箱： 20328<br>
+            
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250530/弃坑前.png" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/弃坑后.png" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+
+            
+            <h2>鱼展示</h2><br>
+            <img width="200" src="./20250530/弃坑鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/弃坑后鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250530/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           
+            <img width="200" src="./20250530/954名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+            <img width="200" src="./20250530/进度大号名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content3" style="display: none;">
+        <h2>统计 竖咖啡</h2><br>
+            <p>
+            进度： 97 <br>
+            道具： 1600+42 <br>
+            开箱数据：    954<br>
+            道具:         237<br>
+            招募：      575<br>
+            随机红： 2570<br>
+            万能红： 1195<br>
+            铂金箱子： 162<br>
+            珍珠：     277<br>
+            金钻：     11.45w<br>
+            精铁： 13.05w<br><br>
+            
+            之前：赤羽*9 焰神*9 红蝶*5 月尾*9 千年迪*12<br>
+            之后：赤羽*9 焰神*9 红蝶*5 月尾*9 千年迪*12<br>
+            钓鱼：赤羽*3 焰神*4 红蝶*3 月尾*5 千年迪*6<br>
+            理论出货率：1.52%<br>
+            共计21条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 47.89w<br>
+            招募： 9763<br>
+            鱼竿： 1287<br>
+            宝箱： 81168<br>
+            图鉴： 2955<br>
+            =====<br>
+            金钻： 24.62w+（18+185钻石）71050=31.72<br>
+            招募： 6592<br>
+            鱼竿： 569<br>
+            宝箱： 56024<br>           
+            图鉴： 3060<br>
+            ====消耗====<br>
+            金钻： 16.17w<br>
+            招募： 3171<br>
+            鱼竿： 718<br>
+            宝箱： 25144<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250530/竖咖啡前.png" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/竖咖啡后.png" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            
+            <h2>鱼展示</h2><br>
+            <img width="200" src="./20250530/竖咖啡鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/竖咖啡后鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250530/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           
+            <img width="200" src="./20250530/954名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+            <img width="200" src="./20250530/进度大号名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content4" style="display: none;">
+        <h2>统计 名方</h2><br>
+            <p>
+            进度：98 <br>
+            道具：1600+46 <br>
+            开箱数据：     945<br>
+            道具:         235<br>
+            招募：         450<br>
+            随机红：    2475<br>
+            万能红：    1505<br>
+            铂金箱子： 177<br>
+            珍珠：      260<br>
+            金钻： 10.62w<br>
+            精铁： 15.27w<br><br>
+            
+            之前：赤羽*12 焰神*9 红蝶*3 月尾*2 千年迪*9<br>
+            之后：赤羽*17 焰神*13 红蝶*9 月尾*7 千年迪*12<br>
+            钓鱼：赤羽*5 焰神*4 红蝶*6 月尾*5 千年迪*3<br>
+            理论出货率：1.52%<br>
+            共计21条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 30.08w<br>
+            招募： 6222<br>
+            鱼竿： 888<br>
+            宝箱： 53837<br>
+            图鉴： 3060<br>
+            
+            =====<br>
+            金钻： 23871+（19+184钻石）71050=94921<br>
+            招募： 2943<br>
+            鱼竿： 249<br>
+            宝箱： 30231<br>           
+            图鉴： 3060<br>
+            ====消耗====<br>
+            金钻： 20.59w<br>
+            招募： 3279<br>
+            鱼竿： 639<br>
+            宝箱： 23606<br>
+            
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250530/名方前.png" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/名方后.png" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            
+            <h2>鱼展示</h2><br>
+            <img width="200" src="./20250530/名方鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <img width="200" src="./20250530/名方后鱼.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250530/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           <img width="200" src="./20250530/954名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+            <img width="200" src="./20250530/进度大号名方弃坑竖咖啡.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+    </div>
+    
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <img  alt="点击缩小">
+    </div>
+    <a href="./index.html">返回导航页面</a>
+    <script>
+        function showModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = modal.getElementsByTagName("img")[0];
+            modalImg.src = img.src;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function showContent() {
+            var selectElement = document.getElementById("selectOption");
+            var selectedValue = selectElement.value;
+            var contentContainer = document.getElementById("contentContainer");
+
+            // 隐藏所有内容
+            var allContents = contentContainer.getElementsByTagName("div");
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = "none";
+            }
+
+            // 根据选择的选项显示相应内容
+            if (selectedValue !== "") {
+                var selectedContent = document.getElementById(selectedValue);
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

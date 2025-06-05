@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <META    HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META    HTTP-EQUIV="Expires" CONTENT="0">
+
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <title>25元旦消耗情况</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal img {
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 10% auto;
+        }
+        
+        .content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <h1>25元旦消耗情况</h1>
+
+    <label for="selectOption" style="font-size:20px;">选择一个选项:</label>
+    <select id="selectOption" style="font-size:20px;" onchange="showContent()">
+        <option value="content1">大号消耗统计</option>
+        <option value="content2">弃坑消耗统计</option>
+        <option value="content3">竖咖消耗统计</option>
+        <option value="content4">名方消耗统计</option>
+    </select>
+    <br><br>
+    <div id="contentContainer" class="content">
+        
+         
+        <div id="content1" style="display: block;">
+        <h2>统计</h2><br>
+            <p>
+            进度：98 <br>
+            道具：1600+46 <br>
+            开箱数据：      -<br>
+            道具: --       <br>
+            招募：       <br>
+            随机红： --  <br>
+            万能红： -- <br>
+            铂金箱子： --<br>
+            珍珠： -     <br>
+            金钻： -  <br>
+            精铁： - <br><br>
+            
+            之前：赤羽*24 焰神*29 红蝶*23 月尾*27 千年迪*25<br>
+            之后：赤羽*28 焰神*32 红蝶*28 月尾*36 千年迪*31<br>
+            钓鱼：赤羽*4 焰神*3 红蝶*5 月尾*9 千年迪*6<br>
+            理论出货率：1.52%<br>
+            共计27条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 30.9w<br>
+            宝箱： 60990<br>
+            招募： 5230<br>
+            图鉴： 3601<br>
+            鱼竿： 836<br>
+            =====<br>
+            金钻：14968+（75+167钻石）84700=99668<br>
+            宝箱： 37803<br>
+            招募： 2031<br>
+            图鉴： ---<br>
+            鱼竿： 190<br>
+            ====消耗====<br>
+            金钻： 21w<br>
+            宝箱： 23187<br>
+            招募： 3199<br>
+            鱼竿： 646<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250101/大号节前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            <h2>活动展示</h2><br>
+            <img width="200" src="./20250101/大号节后.png" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250101/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           
+            <img width="200" src="./20250101/进度.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content2" style="display: none;">
+        <h2>统计</h2><br>
+            <p>
+            进度：97 <br>
+            道具：1600+42 <br>
+            开箱数据：      -<br>
+            道具: --       <br>
+            招募：       <br>
+            随机红： --  <br>
+            万能红： -- <br>
+            铂金箱子： --<br>
+            珍珠： -     <br>
+            金钻： -  <br>
+            精铁： - <br><br>
+            
+            之前：赤羽*15 焰神*11 红蝶*5 月尾*11 千年迪*9<br>
+            之后：赤羽*20 焰神*15 红蝶*6 月尾*18 千年迪*12<br>
+            钓鱼：赤羽*5 焰神*4 红蝶*1 月尾*7 千年迪*3<br>
+            理论出货率：1.52%<br>
+            共计20条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 29.23w<br>
+            宝箱： 79640<br>
+            招募： 7680<br>
+            图鉴： -<br>
+            鱼竿： 966<br>
+            =====<br>
+            金钻： 44050+（65+87钻石）53200=97250<br>
+            宝箱： 54752<br>
+            招募： 4556<br>
+            图鉴： ---<br>
+            鱼竿： 258<br>
+            ====消耗====<br>
+            金钻： 19.5w<br>
+            宝箱： 24888<br>
+            招募： 3124<br>
+            鱼竿： 708<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250101/弃坑前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            <h2>活动展示</h2><br>
+            <img width="200" src="./20250101/弃坑后.png" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250101/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           
+            <img width="200" src="./20250101/进度.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content3" style="display: none;">
+        <h2>统计</h2><br>
+            <p>
+            进度： 97 <br>
+            道具： 1600+42 <br>
+            开箱数据：      -<br>
+            道具: --       <br>
+            招募：       <br>
+            随机红： --  <br>
+            万能红： -- <br>
+            铂金箱子： --<br>
+            珍珠： -     <br>
+            金钻： -  <br>
+            精铁： - <br><br>
+            
+            之前：赤羽*6 焰神*5 红蝶*2 月尾*4 千年迪*6<br>
+            之后：赤羽*9 焰神*9 红蝶*5 月尾*9 千年迪*12<br>
+            钓鱼：赤羽*3 焰神*4 红蝶*3 月尾*5 千年迪*6<br>
+            理论出货率：1.52%<br>
+            共计21条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 28.16w<br>
+            宝箱： 60258<br>
+            招募： 8641<br>
+            图鉴： --<br>
+            鱼竿： 1131<br>
+            =====<br>
+            金钻： 16941+（52+141钻石）67550=84491<br>
+            宝箱： 36478<br>
+            招募： 5484<br>
+            图鉴： ---<br>
+            鱼竿： 418<br>
+            ====消耗====<br>
+            金钻： 19.7w<br>
+            宝箱： 23780<br>
+            招募： 3157<br>
+            鱼竿： 713<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250101/竖咖前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            <h2>活动展示</h2><br>
+            <img width="200" src="./20250101/竖咖后.png" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250101/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           
+            <img width="200" src="./20250101/进度.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+        <div id="content4" style="display: none;">
+        <h2>统计</h2><br>
+            <p>
+            进度：98 <br>
+            道具：1600+46 <br>
+            开箱数据：      -<br>
+            道具: --       <br>
+            招募：       <br>
+            随机红： --  <br>
+            万能红： -- <br>
+            铂金箱子： --<br>
+            珍珠： -     <br>
+            金钻： -  <br>
+            精铁： - <br><br>
+            
+            之前：赤羽*5 焰神*2 红蝶*0 月尾*1 千年迪*3<br>
+            之后：赤羽*12 焰神*9 红蝶*3 月尾*2 千年迪*9<br>
+            钓鱼：赤羽*7 焰神*7 红蝶*3 月尾*1 千年迪*6<br>
+            理论出货率：1.52%<br>
+            共计24条(1600杆<br><br>
+
+
+            <h3>消耗对比</h3>
+            金钻： 23.34w<br>
+            宝箱： 30459<br>
+            招募： 5807<br>
+            图鉴： --<br>
+            鱼竿： 735<br>
+            =====<br>
+            金钻： 28502+（2+0钻石）700=29202<br>
+            宝箱： 8584<br>
+            招募： 3031<br>
+            图鉴： ---<br>
+            鱼竿： 146<br>
+            ====消耗====<br>
+            金钻： 20.42w<br>
+            宝箱： 21875<br>
+            招募： 2776<br>
+            鱼竿： 589<br>
+            </p>
+            
+            <h2>资源展示</h2><br>
+            <img width="200" src="./20250101/名方前.jpg" alt="点击看大图" onclick="showModal(this)">
+            <br><br>
+            
+            <h2>活动展示</h2><br>
+            <img width="200" src="./20250101/名方后.png" alt="点击看大图" onclick="showModal(this)">
+            <br>
+            <!-- <video width="200" controls>
+                <source src="./20250101/开箱展示.jpg" type="video/mp4">
+                您的浏览器不支持HTML5视频。
+            </video><br><br> -->
+           
+            <img width="200" src="./20250101/进度.png" alt="点击看大图" onclick="showModal(this)"><br><br>
+        
+        </div>
+        
+    </div>
+    
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <img  alt="点击缩小">
+    </div>
+    <a href="./index.html">返回导航页面</a>
+    <script>
+        function showModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = modal.getElementsByTagName("img")[0];
+            modalImg.src = img.src;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function showContent() {
+            var selectElement = document.getElementById("selectOption");
+            var selectedValue = selectElement.value;
+            var contentContainer = document.getElementById("contentContainer");
+
+            // 隐藏所有内容
+            var allContents = contentContainer.getElementsByTagName("div");
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = "none";
+            }
+
+            // 根据选择的选项显示相应内容
+            if (selectedValue !== "") {
+                var selectedContent = document.getElementById(selectedValue);
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
